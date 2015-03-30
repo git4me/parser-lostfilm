@@ -1,0 +1,25 @@
+{
+  "name": "pt-series/parser-lostfilm",
+  "description": "Parsing lostfilm.tv and conversion to magnet-links series",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ilya Gusev",
+      "email": "mail@igusev.ru"
+    }
+  ],
+  "require": {
+    "jonnyw/php-phantomjs": "3.*"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "PhantomInstaller\\Installer::installPhantomJS"
+    ],
+    "post-update-cmd": [
+      "PhantomInstaller\\Installer::installPhantomJS"
+    ]
+  }
+}
