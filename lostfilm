@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+/*
+ * This file is part of the {{ pt-series/parser-lostfilm }} package.
+ *
+ * (c) Ilya Gusev <mail@igusev.ru>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ *
+ *
+ *  php lostfilm getSeries
+ *
+ */
+$loader = require 'vendor/autoload.php';
+require 'src/PTSeries/Parser/Lostfilm/CLIApplication.php';
+require 'src/PTSeries/Parser/Lostfilm/Command/GetSeriesCommand.php';
+$app = new PTSeries\Parser\Lostfilm\CLIApplication();
+$app->run($argv);
