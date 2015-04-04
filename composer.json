@@ -10,7 +10,8 @@
   ],
   "require": {
     "jonnyw/php-phantomjs": "3.*",
-    "corneltek/cliframework": "dev-master"
+    "corneltek/cliframework": "dev-master",
+    "sleeping-owl/apist": "1.*"
   },
   "config": {
     "bin-dir": "bin"
@@ -22,5 +23,8 @@
     "post-update-cmd": [
       "PhantomInstaller\\Installer::installPhantomJS"
     ]
+  },
+  "autoload": {
+    "psr-4": {"": "src/"}
   }
 }
