@@ -60,4 +60,19 @@ class LostfilmApi extends Apist
             ]
         );
     }
+
+    public function getTorrents($seriesId, $season, $episode)
+    {
+        return $this->get('/nrdr.php', [
+            'html' => Apist::current()->html()
+        ],
+            [
+                'query' => [
+                    'c' => $seriesId,
+                    's' => $season,
+                    'e' => $episode
+                ]
+            ]
+        );
+    }
 }
