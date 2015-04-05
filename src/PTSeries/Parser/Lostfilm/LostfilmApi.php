@@ -63,9 +63,14 @@ class LostfilmApi extends Apist
 
     public function getTorrents($seriesId, $season, $episode)
     {
-        return $this->get('/nrdr.php', [
-            'html' => Apist::current()->html()
-        ],
+        return $this->get('/nrdr.php', Apist::filter('div div div[style="margin-left:-65px"]')->each(
+            [
+                'type' => Apist::current()
+                    ->filter('td[style="width:55px;"] img')
+                    ->attr('src')->ltrim('img/search')->ltrim("_")->rtrim('.png'),
+                'link' => Apist::current()->filter('div nobr a')->attr('href')
+            ]
+        ),
             [
                 'query' => [
                     'c' => $seriesId,
