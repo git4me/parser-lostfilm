@@ -71,6 +71,9 @@ class LostfilmApi extends Apist
                     'c' => $seriesId,
                     's' => $season,
                     'e' => $episode
+                ],
+                'headers' => [
+                    'Cookie' => 'uid=xxx; pass=xxx'
                 ]
             ]
         );
