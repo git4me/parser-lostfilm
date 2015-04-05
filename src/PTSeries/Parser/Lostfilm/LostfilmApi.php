@@ -25,4 +25,19 @@ class LostfilmApi extends Apist
             ])
         ]);
     }
+
+    public function getEpisodes($id)
+    {
+        return $this->get('/browse.php',
+            [
+                'name' => Apist::filter('#MainDiv .mid h1:first')->text(),
+                'description' => Apist::filter('#MainDiv .mid div.content + span:first')->text()
+            ],
+            [
+                'query' => [
+                    'cat' => $id
+                ]
+            ]
+        );
+    }
 }
